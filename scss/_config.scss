@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
+
+//include variables below this comment
+$dark-gray: hsl(0, 0%, 63%);
+$very-dark-gray: hsl(0, 0%, 27%);
+
+//reset
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 12px;
+    font-family: 'Spartan', sans-serif;
+}
+//nice transition
+@mixin transition-ease{
+ transition: all 0.5s ease-in-out;
+}
+
+//media queries
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}
