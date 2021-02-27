@@ -1,0 +1,109 @@
+.menu-btn {
+    position: absolute;
+    z-index: 100;
+    left: 1.5rem;
+    top: 2.9rem;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    @include transition-ease;
+
+    &__burger {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        @include transition-ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            @include transition-ease;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            @include transition-ease;
+        }
+
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(4px, 5px);
+                background-color: $dark-gray;
+            }
+
+            &::after {
+                width: 20px;
+                transform: rotate(-45deg) translate(3px, -5px);
+                background-color: $dark-gray;
+            }
+        }
+    }
+}
+
+.nav {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 110px;
+    // visibility: hidden;
+    // opacity: 0;
+    @include transition-ease;
+    &.open{
+        visibility: visible;
+        opacity: 1;
+        background-color: #fff;
+    }
+    &__logo {
+        background: url('../img/logo.svg') no-repeat;
+        background-position: center;
+        width: 100px;
+        height: 110px;
+        margin: 0 auto;
+        visibility: visible;
+        display: block;
+        &.close{
+            display: none;
+        }
+    }
+    .menu-nav {
+        display: none;
+        list-style: none;
+        @include transition-ease;
+        &.open{
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1.5rem;
+        }
+        &__item {
+            @include transition-ease;
+            margin-left: 2rem;
+        }
+        &__link {
+            display: inline-block;
+            text-transform: lowercase;
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            @include transition-ease;
+        }
+    }
+}

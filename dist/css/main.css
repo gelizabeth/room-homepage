@@ -10,4 +10,206 @@ body {
   font-size: 12px;
   font-family: 'Spartan', sans-serif;
 }
+
+.menu-btn {
+  position: absolute;
+  z-index: 100;
+  left: 1.5rem;
+  top: 2.9rem;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger.open {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background: transparent;
+}
+
+.menu-btn__burger.open::before {
+  -webkit-transform: rotate(45deg) translate(4px, 5px);
+          transform: rotate(45deg) translate(4px, 5px);
+  background-color: #a1a1a1;
+}
+
+.menu-btn__burger.open::after {
+  width: 20px;
+  -webkit-transform: rotate(-45deg) translate(3px, -5px);
+          transform: rotate(-45deg) translate(3px, -5px);
+  background-color: #a1a1a1;
+}
+
+.nav {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 110px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav.open {
+  visibility: visible;
+  opacity: 1;
+  background-color: #fff;
+}
+
+.nav__logo {
+  background: url("../img/logo.svg") no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 110px;
+  margin: 0 auto;
+  visibility: visible;
+  display: block;
+}
+
+.nav__logo.close {
+  display: none;
+}
+
+.nav .menu-nav {
+  display: none;
+  list-style: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav .menu-nav.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+
+.nav .menu-nav__item {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin-left: 2rem;
+}
+
+.nav .menu-nav__link {
+  display: inline-block;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.home {
+  height: 100vh;
+}
+
+.home__slider {
+  width: 100%;
+  height: 47%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 0;
+}
+
+.home__slider .slide {
+  display: none;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.home__slider .slide_active {
+  position: relative;
+  z-index: 1;
+  display: inline;
+  visibility: visible;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.home__slider .slide:nth-of-type(1) {
+  background: url("../img/mobile-image-hero-1.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.home__slider .slide:nth-of-type(2) {
+  background: url("../img/mobile-image-hero-2.jpg") no-repeat;
+  background-size: cover;
+}
+
+.home__slider .slide:nth-of-type(3) {
+  background: url("../img/mobile-image-hero-3.jpg") no-repeat;
+  background-size: cover;
+}
+
+.home__slider .slider__button {
+  position: absolute;
+  height: 56px;
+  width: 56px;
+  bottom: 0;
+  z-index: 2;
+}
+
+.home__slider .slider__button_prev {
+  background: url("../img/icon-angle-left.svg") no-repeat, black;
+  background-size: 20%, 100%;
+  background-position: center;
+  right: 56px;
+}
+
+.home__slider .slider__button_next {
+  background: url("../img/icon-angle-right.svg") no-repeat, black;
+  background-size: 20%, 100%;
+  background-position: center;
+  right: 0;
+}
 /*# sourceMappingURL=main.css.map */
