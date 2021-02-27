@@ -212,4 +212,12 @@ body {
   background-position: center;
   right: 0;
 }
+
+.home__content {
+  display: none;
+}
+
+.home__content_active {
+  display: block;
+}
 /*# sourceMappingURL=main.css.map */

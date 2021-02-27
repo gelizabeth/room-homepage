@@ -55,4 +55,10 @@
             }
         }
     }
+    &__content{
+        display: none;
+        &_active{
+            display: block;
+        }
+    }
 }

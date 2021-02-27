@@ -50,17 +50,14 @@ const next = () => {
     if(currentSlide === slides.length-1) {
         currentSlide = 0;
     } else currentSlide+=1;
-    console.log(currentSlide);
     activeSlide(currentSlide);
 }
 const prev = () => {
     if(currentSlide === 0) {
         currentSlide = slides.length-1;
     } else currentSlide-=1;
-    console.log(currentSlide);
     activeSlide(currentSlide);
 }
-
 
 activeSlide(currentSlide);
 
