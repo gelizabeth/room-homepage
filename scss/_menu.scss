@@ -94,7 +94,7 @@
             padding-right: 1.5rem;
         }
         &__item {
-            @include transition-ease;
+            
             margin-left: 2rem;
         }
         &__link {
@@ -103,7 +103,54 @@
             text-decoration: none;
             color: black;
             font-weight: 600;
-            @include transition-ease;
+            
+        }
+    }
+}
+@include media-md{
+    .menu-btn{
+        display: none;
+    }
+    .nav{
+        display: flex;
+        &__logo{
+            margin: 0 3.25rem 0 3.8rem;
+            height: 141px;
+            width: 68px;
+        }
+        .menu-nav{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 141px;
+            &__item{
+                margin-left: 0;
+                margin-right: 2rem;
+            }
+            &__link {
+                color: #fff;
+                font-size: 0.72rem;
+                cursor: pointer;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 1.2rem;
+                    left: 50%;
+                    width: 0;
+                    height: 2px;
+                    background-color: #fff;
+                    @include transition-ease;
+                }
+                &:hover{
+                    &::after{
+                        content: '';
+                        left:0;
+                        width: 100%;
+                     
+                    }
+                }
+            }
         }
     }
 }

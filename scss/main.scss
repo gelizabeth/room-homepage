@@ -1,2 +1,15 @@
-@import './config', './responsive', './menu', './home';
+@import './config', './menu', './home', './about';
+
+.content{
+    &__header{
+        font-size: 1.65rem;
+        margin-bottom: 1rem ;
+        font-weight: 300;
+    }
+    &__paragraph{
+        font-size: 0.72rem;
+        line-height: 1.31rem;
+        color: $dark-gray;
+    }
+}
 

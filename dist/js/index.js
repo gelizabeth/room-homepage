@@ -63,3 +63,8 @@ activeSlide(currentSlide);
 
 prevBtn.addEventListener('click', prev);
 nextBtn.addEventListener('click', next);
+
+//keyboard listeners for slides
+document.addEventListener('keyup', (event)=>{if(event.keyCode===37) {prev()}});
+document.addEventListener('keyup', (event)=>{if(event.keyCode===39) {next()}});
+

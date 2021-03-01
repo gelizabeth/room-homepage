@@ -1,53 +1,62 @@
 .home {
     height: 100vh;
+    position: relative;
 
     &__slider {
         width: 100%;
         height: 47%;
         display: flex;
         position: relative;
-        z-index: 0;
+        z-index: 1;
+
         .slide {
             display: none;
             height: 100%;
             width: 100%;
             @include transition-ease;
             opacity: 0;
+
             &_active {
                 position: relative;
                 z-index: 1;
                 display: inline;
                 visibility: visible;
                 height: 100%;
-                width: 100%;   
-                opacity: 1; 
+                width: 100%;
+                opacity: 1;
             }
-            &:nth-of-type(1){
+
+            &:nth-of-type(1) {
                 background: url('../img/mobile-image-hero-1.jpg') no-repeat;
                 background-size: 100% 100%;
             }
-            &:nth-of-type(2){
+
+            &:nth-of-type(2) {
                 background: url('../img/mobile-image-hero-2.jpg') no-repeat;
                 background-size: cover;
             }
-            &:nth-of-type(3){
+
+            &:nth-of-type(3) {
                 background: url('../img/mobile-image-hero-3.jpg') no-repeat;
                 background-size: cover;
             }
         }
-        .slider__button{
+
+        .slider__button {
             position: absolute;
             height: 56px;
             width: 56px;
             bottom: 0;
-            z-index: 2;
-            &_prev{
+            z-index: 100;
+
+            &_prev {
                 background: url('../img/icon-angle-left.svg') no-repeat, rgba($color: black, $alpha: 1);
                 background-size: 20%, 100%;
                 background-position: center;
                 right: 56px;
             }
-            &_next{
+
+            &_next {
                 background: url('../img/icon-angle-right.svg') no-repeat, rgba($color: black, $alpha: 1);
                 background-size: 20%, 100%;
                 background-position: center;
@@ -55,10 +64,107 @@
             }
         }
     }
-    &__content{
+
+    &__content {
         display: none;
-        &_active{
+        padding: 4.5rem 2rem;
+        position: relative;
+        z-index: 0;
+
+        &_active {
             display: block;
+            height: 53%;
+        }
+
+        .content__button {
+            position: absolute;
+            text-transform: uppercase;
+            letter-spacing: 0.63rem;
+            font-weight: 300;
+            text-decoration: none;
+            color: black;
+            height: 50px;
+            display: block;
+            bottom: 2.2rem;
+
+            &::after {
+                position: absolute;
+                content: ' ';
+                width: 73px;
+                height: 12px;
+                background: url('../img/icon-arrow.svg') right no-repeat;
+            }
+        }
+    }
+}
+
+@include media-lg{
+    .home{
+        height: 66.8vh;
+        display: flex;
+        &__slider{
+            width: 60%;
+            height: 100%;
+            .slider__button {
+                
+                height: 80px;
+                width: 80px;
+                bottom: 0;
+                z-index: 100;
+                cursor: pointer;
+                &_prev {
+                    right: -80px;
+                }
+    
+                &_next {
+                    right: -160px;
+                }
+            }
+            .slide{
+                
+                &:nth-of-type(1) {
+                    background: url('../img/desktop-image-hero-1.jpg') no-repeat;
+                    background-size: cover;
+                }
+    
+                &:nth-of-type(2) {
+                    background: url('../img/desktop-image-hero-2.jpg') no-repeat;
+                    background-size: cover;
+                }
+    
+                &:nth-of-type(3) {
+                    background: url('../img/desktop-image-hero-3.jpg') no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        &__content{
+            z-index: 88;
+            width: 42.5%;
+            height: 100%;
+            padding: 6.5rem 6.3rem;
+            &_active{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .content{
+                &__header{
+                    font-size: 2.325rem;
+                    line-height: 2.8rem;
+                    // padding: 1rem 0 0.65rem;
+                    margin-bottom: unset;
+                }
+                &__paragraph{
+                    
+                    font-size: 0.715rem;
+                }
+                &__button{
+                    bottom: unset;
+                    position: relative;
+                    // margin-top: 2.05rem;                  
+                }
+            }
         }
     }
 }
