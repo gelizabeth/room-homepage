@@ -112,6 +112,10 @@
                 bottom: 0;
                 z-index: 100;
                 cursor: pointer;
+                @include transition-ease;
+                &:hover{
+                    background-color: $very-dark-gray;
+                }
                 &_prev {
                     right: -80px;
                 }
@@ -139,7 +143,7 @@
             }
         }
         &__content{
-            z-index: 88;
+            z-index: unset;
             width: 42.5%;
             height: 100%;
             padding: 6.5rem 6.3rem;
@@ -162,6 +166,9 @@
                 &__button{
                     bottom: unset;
                     position: relative;
+                    &:hover{
+                        // background: #111;
+                    }
                     // margin-top: 2.05rem;                  
                 }
             }

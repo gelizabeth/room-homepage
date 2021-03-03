@@ -313,6 +313,11 @@ body {
     bottom: 0;
     z-index: 100;
     cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .home__slider .slider__button:hover {
+    background-color: #454545;
   }
   .home__slider .slider__button_prev {
     right: -80px;
@@ -333,7 +338,7 @@ body {
     background-size: cover;
   }
   .home__content {
-    z-index: 88;
+    z-index: unset;
     width: 42.5%;
     height: 100%;
     padding: 6.5rem 6.3rem;
@@ -401,6 +406,48 @@ body {
   width: 100%;
   background: url("../img/image-about-light.jpg") no-repeat;
   background-size: cover;
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    height: 33.2vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .about__content {
+    padding: 0;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .about__content * {
+    padding: 0 3rem;
+  }
+  .about__header-image {
+    height: 100%;
+    width: calc(42.5% - 160px);
+  }
+  .about__footer-image {
+    height: 100%;
+    width: calc(42.5% - 160px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about__content {
+    width: 40%;
+  }
 }
 
 .content__header {
